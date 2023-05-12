@@ -1,4 +1,4 @@
-import './button.css';
+import * as S from './styles';
 
 interface ButtonProps {
   /**
@@ -16,7 +16,7 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  children: string;
   /**
    * Optional click handler
    */
@@ -30,14 +30,15 @@ export const Button = ({
   primary = false,
   size = 'medium',
   backgroundColor,
-  label,
+  children,
   ...props
 }: ButtonProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
+
   return (
-    <button
+    <S.Wrapper
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(
         ' '
@@ -45,7 +46,7 @@ export const Button = ({
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
-    </button>
+      {children}
+    </S.Wrapper>
   );
 };

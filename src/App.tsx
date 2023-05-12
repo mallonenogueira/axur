@@ -1,5 +1,12 @@
+import GlobalStyles from './styles/GlobalStyles';
+
 function App() {
-  return <>Página</>;
+  return (
+    <>
+      <GlobalStyles />
+      Página
+    </>
+  );
 }
 
 export default App;

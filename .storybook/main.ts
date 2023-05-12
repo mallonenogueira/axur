@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+
 const config: StorybookConfig = {
   stories: [
     '../src/**/*.mdx',
@@ -8,7 +9,8 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    '@storybook/addon-styling'
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -18,4 +20,5 @@ const config: StorybookConfig = {
     autodocs: 'tag'
   }
 };
+
 export default config;
