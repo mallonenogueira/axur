@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { DetailsPage } from '.';
+import { Component as HomePage } from '.';
 
-describe('Renders details page correctly', async () => {
+describe('Renders home page correctly', async () => {
   it('Should render the page correctly', async () => {
-    render(<DetailsPage />);
-    const element = await screen.queryByText('Detalhes');
+    render(<HomePage />);
+    const element = await screen.queryByText('Página');
 
     expect(element).toBeInTheDocument();
   });

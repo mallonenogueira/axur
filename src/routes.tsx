@@ -1,14 +1,15 @@
 import { RouteObject } from 'react-router-dom';
-import { HomePage } from './pages/Home';
-import { DetailsPage } from './pages/Details';
+
+import { ReactRouterLayout } from './components/Layout';
+import { RootErrorLayout } from './components/RootErrorLayout';
+
+import { routes as webInspectionRoutes } from './features/web-inspection/routes';
 
 export const routes: RouteObject[] = [
   {
     path: '/',
-    element: <HomePage />
-  },
-  {
-    path: '/detalhes',
-    element: <DetailsPage />
+    element: <ReactRouterLayout />,
+    errorElement: <RootErrorLayout />,
+    children: [...webInspectionRoutes]
   }
 ];
