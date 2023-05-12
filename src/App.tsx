@@ -1,12 +1,16 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { routes } from './routes';
 import GlobalStyles from './styles/GlobalStyles';
 
-function App() {
+const router = createBrowserRouter(routes);
+
+export function App() {
   return (
     <>
       <GlobalStyles />
-      Página
+
+      <RouterProvider router={router} />
     </>
   );
 }
-
-export default App;
