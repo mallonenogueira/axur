@@ -1,12 +1,18 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { Component as HomePage } from '.';
+import { routes } from '../../routes';
+import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+
+const router = createMemoryRouter(routes, {
+  initialEntries: ['/']
+});
 
 describe('Renders home page correctly', async () => {
   it('Should render the page correctly', async () => {
-    render(<HomePage />);
-    const element = await screen.queryByText('Página');
+    render(<RouterProvider router={router} />);
+
+    const element = await screen.findByText(/página/i);
 
     expect(element).toBeInTheDocument();
   });
