@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+
+import logo from '../../assets/logo.png';
 
 import * as S from './styles';
 
@@ -11,7 +13,13 @@ interface Props {
 export function RootLayout({ children }: Props) {
   return (
     <S.Wrapper>
-      <S.Header></S.Header>
+      <S.Header>
+        <S.HeaderContainer>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+        </S.HeaderContainer>
+      </S.Header>
 
       <S.Content>{children}</S.Content>
 
