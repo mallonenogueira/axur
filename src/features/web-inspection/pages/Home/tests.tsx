@@ -12,7 +12,7 @@ describe('Renders home page correctly', async () => {
   it('Should render the page correctly', async () => {
     render(<RouterProvider router={router} />);
 
-    const element = await screen.findByText(/página/i);
+    const element = await screen.findByText(/solicitações/i);
 
     expect(element).toBeInTheDocument();
   });
