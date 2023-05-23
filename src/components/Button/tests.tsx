@@ -7,7 +7,7 @@ describe('Renders button correctly', async () => {
   it('Should render the button correctly', async () => {
     render(<Button>Texto do botão</Button>);
 
-    const element = await screen.getByText('Texto do botão');
+    const element = screen.getByText('Texto do botão');
 
     expect(element).toBeInTheDocument();
   });

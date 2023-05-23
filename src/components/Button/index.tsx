@@ -6,9 +6,6 @@ type ButtonProps = Pick<
   'type' | 'onClick' | 'children'
 >;
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = (props: ButtonProps) => {
   return <S.Wrapper type="button" {...props} />;
 };
