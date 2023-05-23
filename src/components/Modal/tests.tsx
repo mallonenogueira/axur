@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Modal } from '.';
 
-describe('Renders modal correctly', async () => {
+describe('Component: Modal', async () => {
   beforeEach(() => {
     const container = document.createElement('div');
 
