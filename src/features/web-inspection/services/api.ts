@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const BASE_URL = import.meta.env.VITE_URL;
+
 export const api = axios.create({
-  baseURL: 'http://testapp.axreng.com:3000/'
+  baseURL: BASE_URL
 });
