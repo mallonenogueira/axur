@@ -35,7 +35,7 @@ export const ModalBase = ({ children, onClose }: Props) => {
 
   return (
     <S.Background ref={ref} onClick={handleBackgroundClick}>
-      <S.Wrapper>{children}</S.Wrapper>
+      <S.Wrapper role="alertdialog">{children}</S.Wrapper>
     </S.Background>
   );
 };

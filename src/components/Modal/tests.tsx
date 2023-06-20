@@ -4,14 +4,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Modal } from '.';
 
 describe('Component: Modal', async () => {
-  beforeEach(() => {
-    const container = document.createElement('div');
-
-    container.id = 'container-modal';
-
-    document.body.appendChild(container);
-  });
-
   it('Should render the modal correctly', async () => {
     const { rerender } = render(
       <Modal visible={false} onClose={vi.fn()}>

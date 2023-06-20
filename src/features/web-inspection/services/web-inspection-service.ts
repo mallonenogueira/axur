@@ -11,11 +11,11 @@ interface CreateCrawlResponse {
   id: string;
 }
 
-interface CreateCrawlData {
+export interface CreateCrawlData {
   keyword: string;
 }
 
-interface CrawlDataResponse {
+export interface CrawlDataResponse {
   id: string;
   status: 'active' | 'done';
   urls: string[];
@@ -25,21 +25,34 @@ class WebInspectionService {
   constructor(private api: AxiosInstance) {}
 
   async list(): Promise<ListCrawlsResponse[]> {
-    // localStorage.getItem('web-inspection:items');
-
-    // localStorage.getItem('web-inspection:items');
-
-    return [
-      {
-        id: 'um',
-        keyword: 'um'
-      }
-    ];
+    return (await localStorage.getItem<ListCrawlsResponse[]>('items')) || [];
   }
 
-  //   find(id: string): CrawlDataResponse {}
+  async find(id: string): Promise<CrawlDataResponse> {
+    const response = await this.api.get<CrawlDataResponse>(`/crawl/${id}`);
 
-  //   create(data: CreateCrawlData): CreateCrawlResponse {}
+    return response.data;
+  }
+
+  async create(data: CreateCrawlData): Promise<CreateCrawlResponse> {
+    const response = await this.api.post<CreateCrawlResponse>('/crawl', data);
+
+    await this.saveOnLocalStorage({
+      ...data,
+      ...response.data
+    });
+
+    return response.data;
+  }
+
+  private async saveOnLocalStorage(data: ListCrawlsResponse) {
+    const items =
+      (await localStorage.getItem<ListCrawlsResponse[]>('items')) || [];
+
+    items.push(data);
+
+    await localStorage.setItem('items', items);
+  }
 }
 
 export const webInspectionService = new WebInspectionService(api);

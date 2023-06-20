@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-top: 5rem;
 
     list-style: none;
   }
@@ -16,10 +15,11 @@ export const Wrapper = styled.div`
 
     padding: 14px 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 0.4rem;
     cursor: pointer;
     position: relative;
     display: flex;
+    text-decoration: none;
 
     ::before {
       content: ' ';
@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
       left: 0;
       bottom: 0;
       background: #ff5824;
-      border-radius: 4px 0px 0px 4px;
+      border-radius: 0.4rem 0px 0px 0.4rem;
     }
   }
 `;
@@ -37,4 +37,5 @@ export const Wrapper = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-bottom: 5rem;
 `;

@@ -15,7 +15,7 @@ export const Background = styled.div`
   z-index: 10000;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background: #fff;
   min-width: 50rem;
   border-radius: 0.4rem;

@@ -1,7 +1,9 @@
 import { ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
 
-type ButtonProps = Pick<
+export type ButtonProps = {
+  primary?: boolean;
+} & Pick<
   ButtonHTMLAttributes<HTMLButtonElement>,
   'type' | 'onClick' | 'children'
 >;

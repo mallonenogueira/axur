@@ -9,7 +9,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   border-radius: 0.4rem;
   border: 1px solid black;
-  padding: 0.5rem 1rem;
+  padding: 1rem 0.5rem;
 
   :focus {
     border-color: #ff5824;

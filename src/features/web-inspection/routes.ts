@@ -6,7 +6,7 @@ export const routes: RouteObject[] = [
     lazy: () => import('./pages/Home')
   },
   {
-    path: '/detalhes',
+    path: '/detalhes/:id',
     lazy: () => import('./pages/Details')
   }
 ];

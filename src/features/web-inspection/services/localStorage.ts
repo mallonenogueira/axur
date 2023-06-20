@@ -1,8 +1,18 @@
-type Keys = 'web-inspection:items';
+import localforage from 'localforage';
+
+type Keys = 'items';
+
+const instance = localforage.createInstance({
+  name: 'web-inspection',
+  driver: localforage.LOCALSTORAGE
+});
 
 export const localStorage = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  getItem(key: Keys): any {
-    return localStorage.getItem(key);
+  async getItem<T>(key: Keys): Promise<T | null> {
+    return instance.getItem<T>(key);
+  },
+
+  async setItem<T>(key: Keys, data: T): Promise<T> {
+    return instance.setItem<T>(key, data);
   }
 };
