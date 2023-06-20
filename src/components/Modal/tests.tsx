@@ -1,7 +1,12 @@
 import { describe, it, expect, vi } from 'vitest';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Modal } from '.';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor
+} from '../../tests/testing-library';
 
 describe('Component: Modal', async () => {
   it('Should render the modal correctly', async () => {

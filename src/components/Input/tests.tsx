@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
 
 import { Input } from '.';
+import { render, screen } from '../../tests/testing-library';
 
 describe('Component: Input', async () => {
   it('Should render the input correctly', async () => {

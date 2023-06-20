@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
 
 import { Button } from '.';
+import { render, screen } from '../../tests/testing-library';
 
 describe('Component: Button', async () => {
   it('Should render the button correctly', async () => {
