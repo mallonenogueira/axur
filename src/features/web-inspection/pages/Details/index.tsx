@@ -26,7 +26,7 @@ export const Component = () => {
           {` > Detalhes: ${data.id}`}
         </h1>
 
-        {STATUS[data.status] && <p>Status: {STATUS[data.status]}</p>}
+        {STATUS[data.status] && <small>Status: {STATUS[data.status]}</small>}
       </S.TitleWrapper>
 
       {data.urls?.map(url => (

@@ -1,17 +1,31 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
-  ul {
-  }
+  ${({ theme }) => css`
+    color: ${theme.colors.texts.default};
+  `}
 `;
 
 export const TitleWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 5rem;
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5rem;
+    color: ${theme.colors.texts.default};
+    font-size: ${theme.font.size.large};
+    font-weight: ${theme.font.weight.bold};
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+    h1,
+    a {
+      text-decoration: none;
+      color: ${theme.colors.texts.default};
+      font-size: ${theme.font.size.large};
+      font-weight: ${theme.font.weight.bold};
+    }
+
+    small {
+      font-size: ${theme.font.size.medium};
+      font-weight: ${theme.font.weight.medium};
+    }
+  `}
 `;

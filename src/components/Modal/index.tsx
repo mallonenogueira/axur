@@ -14,7 +14,7 @@ interface Props {
 export const ModalBase = ({ children, onClose }: Props) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const handleBackgroundClick = useCallback(
+  const handleOverlayClick = useCallback(
     (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (ref.current !== event.target) return;
 
@@ -34,9 +34,9 @@ export const ModalBase = ({ children, onClose }: Props) => {
   }, [onClose]);
 
   return (
-    <S.Background ref={ref} onClick={handleBackgroundClick}>
+    <S.Overlay ref={ref} onClick={handleOverlayClick}>
       <S.Wrapper role="alertdialog">{children}</S.Wrapper>
-    </S.Background>
+    </S.Overlay>
   );
 };
 
